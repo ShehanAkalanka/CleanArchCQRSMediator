@@ -8,7 +8,6 @@
     <Folder Include="Books\Commands\CreateBook\" />
     <Folder Include="Books\Commands\DeleteBook\" />
     <Folder Include="Books\Commands\UpdateBook\" />
-    <Folder Include="Books\Queries\GetBooks\" />
     <Folder Include="Books\Queries\GetBooksById\" />
     <Folder Include="Books\Common\Behaviours\" />
     <Folder Include="Books\Common\Exeptions\" />
