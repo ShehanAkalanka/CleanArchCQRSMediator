@@ -1,4 +1,5 @@
-﻿using CleanArchCQRSMediator.Domain.Repository;
+﻿using AutoMapper;
+using CleanArchCQRSMediator.Domain.Repository;
 using MediatR;
 using System;
 using System.Collections;
@@ -14,25 +15,22 @@ namespace CleanArchCQRSMediator.Application.Books.Queries.GetBooks
     public class GetBookQueryHandler : IRequestHandler<GetBookQuery, List<BookVm>>
     {
         private readonly IBookRepository _bookRepository;
+        private readonly IMapper _mapper;
 
-        public GetBookQueryHandler(IBookRepository bookRepository)
+        public GetBookQueryHandler(IBookRepository bookRepository, IMapper mapper)
         {
             _bookRepository = bookRepository;
-        }
-        public async Task<List<BookVm>> Handle(GetBookQuery request, CancellationToken cancellationToken)
+            _mapper = mapper;
+        }        public async Task<List<BookVm>> Handle(GetBookQuery request, CancellationToken cancellationToken)
         {
+            // 1️⃣ Get all books from repository
             var books = await _bookRepository.GetAllBooksAsync();
 
+            // 2️⃣ Use AutoMapper to convert List<Book> to List<BookVm>
+            // This works automatically because BookVm implements IMapFrom<Book>
+            var bookList = _mapper.Map<List<BookVm>>(books);
 
-            //here we should add a auto mapper to map those easily
-            var bookList = books.Select(b => new BookVm
-            {
-                Id = b.Id,
-                Title = b.Title,
-                Author = b.Author,
-                PublishedDate = b.PublishedDate,
-            }).ToList();
-
+            // 3️⃣ Return the mapped ViewModels
             return bookList;
         }
     }

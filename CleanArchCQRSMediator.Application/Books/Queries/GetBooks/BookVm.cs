@@ -8,11 +8,10 @@ namespace CleanArchCQRSMediator.Application.Books.Queries.GetBooks
 {
     //view model for book query
     public class BookVm
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
+    {        public int Id { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Author { get; set; } = string.Empty;
         public DateTime PublishedDate { get; set; }
-        public string ISBN { get; set; }
+        public string ISBN { get; set; } = string.Empty;
     }
 }
