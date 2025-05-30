@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace CleanArchCQRSMediator.Application.Books.Queries.GetBooks
 {
     //view model for book query
-    public class BookVm : IMapFrom<Book>
+    public class BookViewModel : IMapFrom<Book>
     // by implementing IMapFrom<Book>, you're telling the system:
     //"This BookVm can be automatically mapped FROM a Book entity"
     //"Please configure AutoMapper to handle Book → BookVm conversion"

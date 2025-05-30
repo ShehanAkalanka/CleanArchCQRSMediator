@@ -19,5 +19,5 @@ namespace CleanArchCQRSMediator.Application.Books.Queries.GetBooks
     //    From MediatR - defines a request that returns a response
     //    Generic parameter<List<BookVm>> specifies the return type
     //    This query will return a list of BookVm(Book View Models)
-    public record class GetBookQuery : IRequest<List<BookVm>>;
+    public record class GetBookQuery : IRequest<List<BookViewModel>>;
 }
