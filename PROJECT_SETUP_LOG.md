@@ -96,3 +96,8 @@ CleanArchCQRSMediator/
   ### Add get book query handler
 **Folder:** `CleanArchCQRSMediator.Application/Books/Queries/GetBooks`
  ✅ Add GetBookQueryHandler.cs file 
+
+   ### configure automapper to map BookVm from Book
+**Folder:** `CleanArchCQRSMediator.Application/Books/Queries/GetBooks`
+**File:** `CleanArchCQRSMediator.Application/Books/Queries/GetBooks/BookViewModel.cs`
+ ✅ Rename BookVm.cs file to BookViewModel.cs
